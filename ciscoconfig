@@ -1,0 +1,118 @@
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+ip cef
+no ip domain lookup
+!
+!
+!
+          
+R1#show running-config 
+Building configuration...
+
+Current configuration : 872 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+ip cef
+no ip domain lookup
+!
+!
+!
+!         
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+username admin password 0 admin
+!
+!
+ip tcp synwait-time 5
+! 
+!
+!
+!
+!
+interface Port-channel1
+ ip address dhcp
+ ip ospf 1 area 1
+ hold-queue 300 in
+!
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex half
+!
+router ospf 1
+ log-adjacency-changes
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+no cdp log mismatch duplex
+!
+!
+!
+!
+control-plane
+!         
+!
+!
+!
+!
+!
+gatekeeper
+ shutdown
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login
+!
+!         
+end
