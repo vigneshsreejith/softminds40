@@ -108,7 +108,7 @@ line con 0
  stopbits 1
 line aux 0
  exec-timeout 0 0
- privilege level 15
+ privilege level 14
  logging synchronous
  stopbits 1
 line vty 0 4
