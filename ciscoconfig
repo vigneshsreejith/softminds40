@@ -103,7 +103,7 @@ gatekeeper
 !
 line con 0
  exec-timeout 0 0
- privilege level 23
+ privilege level 24
  logging synchronous
  stopbits 1
 line aux 0
