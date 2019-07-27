@@ -1,11 +1,11 @@
 pipeline {
-    agent any
+    agent { docker { image 'maven:3.3.3' } }
     
     stages {
-        stage('Cloning Git') {
+        stage('Build') {
             steps {
-echo "sreejith"
-                git 'https://github.com/vigneshsreejith/softminds40'
+		echo "sreejith"
+                sh 'mvn --version'
             }
         }
     }
